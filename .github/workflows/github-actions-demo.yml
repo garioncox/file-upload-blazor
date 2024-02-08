@@ -9,7 +9,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: |
-          # build
+          docker rm -f garion-test-docker-thing || true
           docker build -t garion-test-docker-thing .
-          # run
           docker run -d -p 9998:8080 --name garion-test-docker-thing garion-test-docker-thing
