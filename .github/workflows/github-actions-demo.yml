@@ -9,5 +9,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: |
+        # build
         docker build -t garion-test-docker-thing .
+        # run
         docker run -d garion-test-docker-thing
